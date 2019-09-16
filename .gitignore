@@ -21,3 +21,66 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
+# 闡橾 唸婁僭 薯諼
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+ 
+# 煎斜橾 薯諼
+*.log
+ 
+# 遴艙羹薯縑憮 虜萄朝 衛蝶蠱 橾菟 薯諼
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+ 
+# 檜贗董蝶縑憮 儅撩朝 煎薛 薑爾 橾 薯諼
+=======
+# 儢渣��� 窶國頃諡� �
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+ 
+# 諢溢� �
+*.log
+ 
+# �渥�麮渥��� 諤��� ��� ��� �
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+ 
+# �渣謔趣�� ��� ��� �陷 � �
+>>>>>>> branch 'master' of https://github.com/daniel0458/bit_java.git
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.externalToolBuilders/
+*.launch
+.classpath
+.factorypath
+.buildpath
+.target
