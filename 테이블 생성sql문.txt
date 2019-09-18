@@ -67,6 +67,6 @@ create table board_img (
     img_num number(6) constraint bd_img_pk PRIMARY KEY, 
     post_id number(6) NOT NULL REFERENCES board (post_id),
     image varchar2(40) NOT NULL ,
-    width number(4) default 300,
-    height number(4) default 300
+    width number(5,1) default 300,
+    height number(5,1) default 300
 )
