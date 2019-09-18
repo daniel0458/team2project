@@ -12,7 +12,7 @@ create table clothes (
     cloth_id number(6) constraint cth_pk PRIMARY KEY, 
     cloth_name varchar2(30) NOT NULL,
     cloth_type varchar2(20) NOT NULL,
-    color varchar2(20) NOT NULL,
+    cloth_color varchar2(20) NOT NULL,
     save_date date NOT NULL,
     image varchar2(20) NOT NULL
 );
