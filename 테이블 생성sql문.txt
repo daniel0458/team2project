@@ -1,11 +1,12 @@
 --db에 넣을때 primary key는 자동으로 생성되게 sql문 짜줄것
---drop table clothes
---drop table users 
---drop table coordi 
---drop table bookmark 
---drop table coordi_cloth 
---drop table board 
+
 --drop table board_img 
+--drop table board 
+--drop table coordi_cloth 
+--drop table bookmark 
+--drop table coordi 
+--drop table users 
+--drop table clothes
 
 --옷 테이블-
 create table clothes (
