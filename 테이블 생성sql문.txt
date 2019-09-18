@@ -1,4 +1,4 @@
---db¿¡ ³ÖÀ»¶§ primary key´Â ÀÚµ¿À¸·Î »ı¼ºµÇ°Ô sql¹® Â¥ÁÙ°Í
+--dbì— ë„£ì„ë•Œ primary keyëŠ” ìë™ìœ¼ë¡œ ìƒì„±ë˜ê²Œ sqlë¬¸ ì§œì¤„ê²ƒ
 --drop table clothes
 --drop table users 
 --drop table coordi 
@@ -7,7 +7,7 @@
 --drop table board 
 --drop table board_img 
 
---¿Ê Å×ÀÌºí-
+--ì˜· í…Œì´ë¸”-
 create table clothes (
     cloth_id number(6) constraint cth_pk PRIMARY KEY, 
     cloth_name varchar2(30) NOT NULL,
@@ -17,7 +17,7 @@ create table clothes (
     image varchar2(20) NOT NULL
 );
 
---À¯Àú
+--ìœ ì €
 create table users (
     id varchar2(20) constraint user_pk primary key,
     password varchar2(20) not null,
@@ -27,7 +27,7 @@ create table users (
     role varchar2(5) default 'user' check(role in ('user','admin'))
 );
 
---ÄÚµğ 
+--ì½”ë”” 
 create table coordi (
     coordi_id number(6) constraint cd_pk PRIMARY KEY, 
     coordi_name varchar2(30) NOT NULL,
@@ -35,7 +35,7 @@ create table coordi (
     coordi_date date NOT NULL
 );
 
---Áñ°ÜÃ£±â Å×ÀÌºí
+--ì¦ê²¨ì°¾ê¸° í…Œì´ë¸”
 create table bookmark (
     bookmark_id number(6) constraint bk_pk PRIMARY KEY, 
     cloth_id number(6) NOT NULL REFERENCES clothes(cloth_id),
@@ -43,14 +43,14 @@ create table bookmark (
     bookmark_date date NOT NULL
 );
 
-ÄÚµğ Ç°¸ñ
+--ì½”ë”” í’ˆëª©
 create table coordi_cloth (
     cdcloth_id number(6) constraint cdcth_pk PRIMARY KEY, 
     coordi_id number(6) NOT NULL REFERENCES coordi (coordi_id),
     image varchar2(40) NOT NULL 
 );
 
---ÀÚÀ¯ °Ô½ÃÆÇ
+--ììœ  ê²Œì‹œíŒ
 create table board (
    post_id number(6) constraint board_pk PRIMARY KEY, 
    user_id varchar2(20) NOT NULL REFERENCES users (id),
@@ -61,7 +61,7 @@ create table board (
    count number(10) default 0 
 );
 
---°Ô½ÃÆÇ ÀÌ¹ÌÁö
+--ê²Œì‹œíŒ ì´ë¯¸ì§€
 create table board_img (
     img_num number(6) constraint bd_img_pk PRIMARY KEY, 
     post_id number(6) NOT NULL REFERENCES board (post_id),
