@@ -11,7 +11,7 @@
 <br/>
 
 <div id="logo">
-	<a href="askcody_index.html">
+	<a href="index.jsp">
 		<img src="./img/logo.png" alt="로고">
 	</a>
 </div>
