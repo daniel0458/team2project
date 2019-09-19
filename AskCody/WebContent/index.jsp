@@ -8,6 +8,40 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/askcody_cssTemplate.css">
 <title> Welcome AskCody </title>
+<script type="text/javascript">
+	const log = console.log;
+	let xdata;
+	$(function() {
+
+		$('#id_check').click(function() {
+			idcheck();
+		});
+	});
+
+	function idcheck() {
+		$.ajax({
+
+			url : 'json/id_check.jsp',
+			dataType : 'json',
+			data : {
+				id : $('#id').val()
+			},
+			success : function(data) {
+				//xdata=data;
+				//alert("success" + data.id)
+				if (data.id == undefined) {
+					$('#msg1').html('사용가능한아이디입니다.')
+				} else {
+					$('#msg1').html('사용중인아이디입니다.')
+				}
+			},
+			error : function() {
+				alert("error " + e);
+			}
+
+		});
+	}
+</script>
 </head>
 
 <body>
