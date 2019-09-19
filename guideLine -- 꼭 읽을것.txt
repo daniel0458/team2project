@@ -1,0 +1,21 @@
+제일먼저 war파일을 다운받아서 이클립스에서 import -> war로 프로젝트를 생성해주세요
+
+통일해야할것
+
+db유저 		: bit/bit
+
+파일별 위치
+
+로컬 이미지  -> ./img (프로젝트내의 img폴더)
+css파일 		-> css폴더
+js 파일 		->  js폴더
+json 파일 		->  json폴더
+원본 파일(header.jsp,footer.jsp) ->  temp폴더
+게시판에서 저장한 파일 ->  upload폴더
+
+dao는 자신이 맡은 페이지에 맞춰서 한개만 생성할것 -> dao폴더
+service및 serviceImpl 파일도 한개씩		-> service폴더
+
+controller 는 제가 만들겠습니다
+
+-written by 성현-
