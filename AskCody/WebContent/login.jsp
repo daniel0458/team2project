@@ -12,7 +12,7 @@
 
 <body>
 <br/><br/><br/>
-<%@include file="../common/askcody_loginheader.jsp" %>
+<%@include file="./temp/loginheader.jsp" %>
 <div>
 <section>
 <!-- 여기에서부터 본문내용 시작 -->
@@ -64,6 +64,6 @@ function check(){
 </section>
 </div>
 <div style="clear: both;"></div>
-<%@include file="../common/askcody_footer.jsp" %>
+<%@include file="./temp/footer.jsp" %>
 </body>
 </html>

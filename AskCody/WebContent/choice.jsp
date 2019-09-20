@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<%@include file="../common/askcody_header.jsp" %>
+<%@include file="./temp/header.jsp" %>
 <div>
 <section>
 <!-- 여기에서부터 본문내용 시작 -->
@@ -107,6 +107,6 @@
 </section>
 </div>
 <div style="clear: both;"></div>
-<%@include file="../common/askcody_footer.jsp" %>
+<%@include file="./temp/footer.jsp" %>
 </body>
 </html>
