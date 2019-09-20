@@ -6,10 +6,10 @@ import vo.UsersVO;
 
 public interface UsersService {
 
-	int adduser(UsersVO  vo);
-	int deleteuser(UsersVO vo);
-	int updateuser(UsersVO vo);
-	List <UsersVO> userlist();
+	int deleteusers(UsersVO vo);
+	int updateusers(UsersVO vo);
+	int insertuser(UsersVO vo) throws Exception;
+
 	
 	
 	
