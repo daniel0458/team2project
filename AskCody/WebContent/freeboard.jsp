@@ -23,7 +23,7 @@
 <style type="text/css">
 
 #search {
-	text-align: center;
+	margin: auto;
 }
 
 </style>
@@ -31,7 +31,7 @@
 <script type="text/javascript">
 $(function() {
 	/*  */
-	$('tr').click(function() {
+	$('.list').click(function() {
 		let postid = $(this).find('#post_id').text();
 		//alert(postid);
 		location.href='post.jsp';
@@ -60,7 +60,7 @@ $(function() {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr class="list">
 					<td id="post_id">2</td>
 					<td>홍길동</td>
 					<td>안녕</td>
@@ -71,8 +71,8 @@ $(function() {
 			</tbody>
 		</table>
 		<a id="write_btn" class="btn btn-default pull-right" href="boardwriter.jsp"> 글쓰기 </a>
-		<form id=search action="${pageContext.request.contextPath}/search.do" method="post">
-    <table>
+		<form action="${pageContext.request.contextPath}/search.do" method="post">
+    <table id=search>
         <tr>
            <td>
               <select name="condition">
