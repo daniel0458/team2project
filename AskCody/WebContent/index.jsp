@@ -45,7 +45,7 @@
 </head>
 
 <body>
-<%@include file="./temp/askcody_header.jsp" %>
+<%@include file="./temp/header.jsp" %>
 <div>
 <section>
 <!-- 여기에서부터 본문내용 시작 -->
@@ -57,6 +57,6 @@
 <!-- 여기까지 본문내용 -->
 </section>
 </div>
-<%@include file="./temp/askcody_footer.jsp" %>
+<%@include file="./temp/footer.jsp" %>
 </body>
 </html>
