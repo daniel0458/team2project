@@ -30,7 +30,7 @@
 			<ul>
 				<li><a href="choice.jsp"> Choice </a></li>
 				<li><a href="#"> submenu2 </a></li>
-				<li><a href="#"> submenu3 </a></li>
+				<li><a href="coordi_test2.jsp"> Coordi </a></li>
 			</ul>
 		</li>
 		<li><a href="#" class="menu"> BOARD </a>
