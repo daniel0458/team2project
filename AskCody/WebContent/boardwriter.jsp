@@ -24,12 +24,12 @@
 <!-- 여기에 본문 내용을 넣어주세요 -->
 	<form action="write.do" method="get" enctype="multipart/form-data">
 		<%=" 제목	"%> <input type="text" id="title" name="title"> <br>
-		<%=" 첨부파일	" %> <input type="file" id="image" name="image" multiple="multiple"> <br>
+		<%-- <%=" 첨부파일	" %> <input type="file" id="image" name="image" multiple="multiple"> <br> --%>
 		<hr>
 		<input type="text" id="content" name="content"> 
 		<br>
 		<br>
-		<input type="submit" class="btn_writer" value="확인"> <a class="btn_writer" href="freeboard.jsp">취소</a> 
+		<input type="submit" class="btn_writer" value="확인"> <a class="btn_writer" href="listBoard.do">취소</a> 
 	</form>
 <!-- 여기까지 본문내용 -->
 </section>

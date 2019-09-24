@@ -1,8 +1,9 @@
 package vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class ClothesVO {
+
 	int cloth_id;
 	String cloth_name;
 	String cloth_type;
@@ -10,11 +11,11 @@ public class ClothesVO {
 	Date save_date;
 	String image;
 	
-	
 	public ClothesVO() {}
 
 	public ClothesVO(int cloth_id, String cloth_name, String cloth_type, String cloth_color, Date save_date,
 			String image) {
+		super();
 		this.cloth_id = cloth_id;
 		this.cloth_name = cloth_name;
 		this.cloth_type = cloth_type;
@@ -72,12 +73,6 @@ public class ClothesVO {
 	}
 
 	@Override
-	public String toString() {
-		return "ClothesVO [cloth_id=" + cloth_id + ", cloth_name=" + cloth_name + ", cloth_type=" + cloth_type
-				+ ", cloth_color=" + cloth_color + ", save_date=" + save_date + ", image=" + image + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -128,7 +123,5 @@ public class ClothesVO {
 			return false;
 		return true;
 	}
-	
-	
 	
 }
