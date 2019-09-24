@@ -25,7 +25,15 @@ public class UsersServiceImpl implements UsersService {
 	public void setDao(UsersDao dao) {
 		this.dao = dao;
 	}
-
+	
+	@Override
+	public List<UsersVO> UsersList() {
+		return dao.getUsersRec();
+	}
+	@Override
+	public List<UsersVO> UsersList2(String id) {
+		return dao.getUsersRec2(id);
+	}
 
 	@Override
 	public int insertuser(UsersVO vo) throws Exception {
@@ -40,6 +48,18 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public int updateusers(UsersVO vo) {
 		return dao.updateusers(vo);
+	}
+
+
+	@Override
+	public String idcheck(String id) {
+		return dao.idcheck(id);
+	}
+
+
+	@Override
+	public String pwcheck(String password) {
+		return dao.pwcheck(password);
 	}
 
 
