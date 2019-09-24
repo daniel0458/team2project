@@ -10,7 +10,6 @@
 	padding: 10px;
 	margin: 0;
 }
-
 #users span {
 	padding: 0 5px;
 }
@@ -115,7 +114,9 @@ hr {
 .info {
 	text-align: center;
 }
-
+section {
+	height: 700px;
+}
 .footer{
 	text-align: center;
 	background: rgb(025, 048, 79);

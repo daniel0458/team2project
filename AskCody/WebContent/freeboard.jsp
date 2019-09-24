@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 </script>
@@ -17,10 +14,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/askcody_cssTemplate.css">
 <title> Welcome AskCody </title>
 
+<link rel="stylesheet" href="./css/askcody_cssTemplate.css">
 <style type="text/css">
+hr {
+	size: 1px !important;
+	color: black !important;
+}
+
+.newul li {
+	padding: 20px !important;
+	display: block !important;
+}
+
+.menu{
+	font-size: 20px !important;
+	font-weight: bold !important;
+	letter-spacing: 2px !important;
+}
 
 #search {
 	margin: auto;

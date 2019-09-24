@@ -35,12 +35,6 @@ public class BoardModifyServlet extends HttpServlet {
         vo.setUser_id("daniel");
         vo.setTitle(request.getParameter("title"));
         
-        if (request.getParameter("image").equals("")) {
-        	vo.setHas_picture("true");
-        } else {
-        	vo.setHas_picture("false");
-        }
-        
         vo.setContent(request.getParameter("content"));
         vo.setPost_date(new java.sql.Date(new Date().getTime()));
         vo.setCount(Integer.parseInt(request.getParameter("count")));
