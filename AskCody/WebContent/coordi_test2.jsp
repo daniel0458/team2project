@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
   <style>
   .draggable{ width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-  #droppable1,#droppable2 { width: 500px; height: 500px; padding: 0.5em; float: left; margin: 10px; }
+  #droppable1, #droppable-container { width: 500px; height: 500px; padding: 0.5em; float: left; margin: 10px; }
   .img{width: 100px; height: 100px;}
   #main{
   	margin-left: 100px;
@@ -22,6 +22,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+  
   $( function() {
     $( "#droppable-container .draggable" ).draggable({ revert: "invalid", connectToSortable: "#droppable1", helper: "clone"});
  
@@ -61,28 +62,31 @@
 
 <!-- 게시판 링크 수정은 askcody_header에서! -->
 <!-- 여기에 본문 내용을 넣어주세요 -->
-<form action="" method="post">
+<form action="save.do" method="post">
 <div id="droppable1" class="ui-widget-header">
   <p>여기에 옷을 놓아주세요</p>
 </div>
 
 <div id="droppable-container" class="ui-widget-header">
 	<div class="draggable ui-widget-content">
-	<input type="hidden" value="99" name="coordi_id[]" >
+	<input type="hidden" value="./img/반바지1.jpg" name="coordi_id[]" >
 	  <img class="img" src="./img/반바지1.jpg">
 	</div>
 	<div class="draggable ui-widget-content">
+	<input type="hidden" value="./img/반바지2.jpg" name="coordi_id[]" >
 	  <img class="img" src="./img/반바지2.jpg">
 	</div>
 	<div class="draggable ui-widget-content">
+	<input type="hidden" value="./img/반바지3.jpg" name="coordi_id[]" >
 	  <img class="img" src="./img/반바지3.jpg">
 	</div>
-
-
 </div>
-<input type ="file" id="img" multiple="multiple">
-<input type="submit" value="다시만들기">
+<input type="submit" value="저장">
 <input type="reset" value="임시버튼">
+
+<p><a href="./listcoordi.do">코디목록</a></p>
+<p><a href="./save.do">코디저장</a>
+
 <!-- 여기까지 본문내용 -->
 </form>
 </section>
