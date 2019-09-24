@@ -67,7 +67,7 @@ $(function() {
 					<td id="post_id">${data.post_id}</td>
 					<td>${data.user_id}</td>
 					<td>${data.title}</td>
-					<!-- <td>${data.has_picture}</td>  -->
+					<%-- <td>${data.has_picture}</td>  --%>
 					<td>${data.post_date}</td>
 					<td>${data.count}</td>
 				</tr>

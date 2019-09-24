@@ -24,7 +24,7 @@
 <!-- 여기에 본문 내용을 넣어주세요 -->
 	<form action="board_modify.do" method="get" enctype="multipart/form-data">
 		<%=" 제목	"%> <input type="text" id="title" name="title" value="${title}"> <br>
-		<!--<%=" 첨부파일	" %> <input type="file" id="image" name="image" multiple="multiple"><br>-->
+		<%--<%=" 첨부파일	" %> <input type="file" id="image" name="image" multiple="multiple"><br>--%>
 		<hr>
 		<input type="text" id="content" name="content" value="${content}"> 
 		<br>

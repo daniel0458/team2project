@@ -6,19 +6,17 @@ public class BoardVO {
 	int post_id;
 	String user_id;
 	String title;
-	String has_picture;
 	String content;
 	Date post_date;
 	int count;
 	
 	public BoardVO() {}
 
-	public BoardVO(int post_id, String user_id, String title, String has_picture, String content, Date post_date,
+	public BoardVO(int post_id, String user_id, String title, String content, Date post_date,
 			int count) {
 		this.post_id = post_id;
 		this.user_id = user_id;
 		this.title = title;
-		this.has_picture = has_picture;
 		this.content = content;
 		this.post_date = post_date;
 		this.count = count;
@@ -49,14 +47,6 @@ public class BoardVO {
 		this.title = title;
 	}
 
-	public String getHas_picture() {
-		return has_picture;
-	}
-
-	public void setHas_picture(String has_picture) {
-		this.has_picture = has_picture;
-	}
-
 	public String getContent() {
 		return content;
 	}
@@ -80,12 +70,11 @@ public class BoardVO {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	
-	
+
 	@Override
 	public String toString() {
-		return "BoardVO [post_id=" + post_id + ", user_id=" + user_id + ", title=" + title + ", has_picture="
-				+ has_picture + ", content=" + content + ", post_date=" + post_date + ", count=" + count + "]";
+		return "BoardVO [post_id=" + post_id + ", user_id=" + user_id + ", title=" + title + ", content=" + content
+				+ ", post_date=" + post_date + ", count=" + count + "]";
 	}
 
 	@Override
@@ -94,7 +83,6 @@ public class BoardVO {
 		int result = 1;
 		result = prime * result + ((content == null) ? 0 : content.hashCode());
 		result = prime * result + count;
-		result = prime * result + ((has_picture == null) ? 0 : has_picture.hashCode());
 		result = prime * result + ((post_date == null) ? 0 : post_date.hashCode());
 		result = prime * result + post_id;
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
@@ -118,11 +106,6 @@ public class BoardVO {
 			return false;
 		if (count != other.count)
 			return false;
-		if (has_picture == null) {
-			if (other.has_picture != null)
-				return false;
-		} else if (!has_picture.equals(other.has_picture))
-			return false;
 		if (post_date == null) {
 			if (other.post_date != null)
 				return false;
@@ -142,8 +125,4 @@ public class BoardVO {
 			return false;
 		return true;
 	}
-
-	
-	
-	
 }

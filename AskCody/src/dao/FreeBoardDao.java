@@ -15,8 +15,8 @@ import vo.BoardVO;
 public class FreeBoardDao {
 	final int line_num = 1;
 	public List<BoardVO> boardList() throws Exception {
-		String sql = "select * from (select rownum row#,post_id,user_name,title,has_picture,post_date,count from " +
-				"(select * from board b,users u where b.user_id=u.id) order by post_id desc) where row# between ? and ?  order by post_id desc  ";
+		String sql = "select * from (select rownum row#,post_id,user_name,title,post_date,count from " +
+				"(select * from board b,users u where b.user_id=u.id) order by post_id desc) where row# between ? and ?  order by post_id desc ";
 
 		List<BoardVO> list = new ArrayList<BoardVO>();
 
@@ -39,7 +39,6 @@ public class FreeBoardDao {
 				vo.setPost_id(rs.getInt("post_id"));
 				vo.setUser_id(rs.getString("user_name"));
 				vo.setTitle(rs.getString("title"));
-				vo.setHas_picture(rs.getString("has_picture"));
 				vo.setPost_date(rs.getDate("post_date"));
 				vo.setCount(rs.getInt("count"));
 
@@ -106,7 +105,6 @@ public class FreeBoardDao {
 				vo.setUser_id(rs.getString("user_id"));
 				vo.setTitle(rs.getString("title"));
 				vo.setContent(rs.getString("content"));
-				vo.setHas_picture(rs.getString("has_picture"));
 				vo.setPost_date(rs.getDate("post_date"));
 				vo.setCount(rs.getInt("count")+1);
 
@@ -149,7 +147,7 @@ try {
 	
 	public List<BoardVO> moveList(int board_num) throws Exception {
 
-		String sql = "select * from (select rownum row#,post_id,user_name,title,has_picture,post_date,count from " +
+		String sql = "select * from (select rownum row#,post_id,user_name,title,post_date,count from " +
 				"(select * from board b,users u where b.user_id=u.id) order by post_id desc) where row# between ? and ? ";
 
 		List<BoardVO> list = new ArrayList<BoardVO>();
@@ -173,7 +171,6 @@ try {
 				vo.setPost_id(rs.getInt("post_id"));
 				vo.setUser_id(rs.getString("user_name"));
 				vo.setTitle(rs.getString("title"));
-				vo.setHas_picture(rs.getString("has_picture"));
 				vo.setPost_date(rs.getDate("post_date"));
 				vo.setCount(rs.getInt("count"));
 
@@ -190,7 +187,7 @@ try {
 	}
 	
 	public List<BoardVO> searchList(String condition, String keyword) throws Exception {
-		String sql = "select * from (select rownum row#,post_id,user_name,title,has_picture,post_date,count "+
+		String sql = "select * from (select rownum row#,post_id,user_name,title,post_date,count "+
 				"from (select * from board b,users u where b.user_id=u.id and "+condition+" like '%'||?||'%') " +
 				"order by post_id desc) where row# between ? and ? ";
 
@@ -219,7 +216,6 @@ try {
 				vo.setPost_id(rs.getInt("post_id"));
 				vo.setUser_id(rs.getString("user_name"));
 				vo.setTitle(rs.getString("title"));
-				vo.setHas_picture(rs.getString("has_picture"));
 				vo.setPost_date(rs.getDate("post_date"));
 				vo.setCount(rs.getInt("count"));
 
@@ -237,8 +233,8 @@ try {
 
 	public int writeBoard(BoardVO vo) throws Exception {
 		
-		String sql = "insert into board(post_id, user_id, title,has_picture, content, post_date, count) "+
-						"values((select nvl(max(post_id),0)+1 from board),?,?,?,?,?,?) ";
+		String sql = "insert into board(post_id, user_id, title, content, post_date, count) "+
+						"values((select nvl(max(post_id),0)+1 from board),?,?,?,?,?) ";
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -251,10 +247,9 @@ try {
 		
 			ps.setString(1, vo.getUser_id());
 			ps.setString(2, vo.getTitle());
-			ps.setString(3, vo.getHas_picture());
-			ps.setString(4, vo.getContent());
-			ps.setDate(5, vo.getPost_date());
-			ps.setInt(6, vo.getCount());
+			ps.setString(3, vo.getContent());
+			ps.setDate(4, vo.getPost_date());
+			ps.setInt(5, vo.getCount());
 			
 			System.out.println(vo);
 			
@@ -296,7 +291,7 @@ try {
 
 	public int modifyBoard(BoardVO vo) throws Exception{
 		
-		String sql = "update board set title = ?,has_picture = ?,content = ?,post_date = ?,count = ? where post_id = ?";
+		String sql = "update board set title = ?,content = ?,post_date = ?,count = ? where post_id = ?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		int result = 0; 
@@ -306,11 +301,10 @@ try {
 		ps = con.prepareStatement(sql);
 		
 		ps.setString(1, vo.getTitle());
-		ps.setString(2, vo.getHas_picture());
-		ps.setString(3, vo.getContent());
-		ps.setDate(4, vo.getPost_date());
-		ps.setInt(5, vo.getCount());
-		ps.setInt(6, vo.getPost_id());
+		ps.setString(2, vo.getContent());
+		ps.setDate(3, vo.getPost_date());
+		ps.setInt(4, vo.getCount());
+		ps.setInt(5, vo.getPost_id());
 		
 		result = ps.executeUpdate();
 		} catch (Exception e) {
@@ -323,7 +317,7 @@ try {
 	}
 
 	public List<BoardVO> moveSearchList(int board_num, String condition, String keyword) throws Exception {
-		String sql = "select * from (select rownum row#,post_id,user_name,title,has_picture,post_date,count from " +
+		String sql = "select * from (select rownum row#,post_id,user_name,title,post_date,count from " +
 				"(select * from board b,users u where b.user_id=u.id and "+condition+" like '%'||?||'%') order by post_id desc) where row# between ? and ? ";
 
 		List<BoardVO> list = new ArrayList<BoardVO>();
@@ -348,7 +342,6 @@ try {
 				vo.setPost_id(rs.getInt("post_id"));
 				vo.setUser_id(rs.getString("user_name"));
 				vo.setTitle(rs.getString("title"));
-				vo.setHas_picture(rs.getString("has_picture"));
 				vo.setPost_date(rs.getDate("post_date"));
 				vo.setCount(rs.getInt("count"));
 
