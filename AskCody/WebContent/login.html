@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3> login</h3>
+<form action="login.jsp" method="get"> <!-- action에는 서버에서 처리할 프로세서가 온다. 서블릿이나jsp 입력양식은 form으로 시작 --> 
+	<!-- action에는 서버에서 처리할 프로세서가 온다. 서블릿이나jsp 입력양식은 form으로 시작 --> 
+	<table border="1">
+	<tr>
+		<td> <label for="id"> ID</label> </td>  <!--  라벨을 클릭하면 포커즈가 위치하게 해준다. -->
+		<td> <input type="text" id="id" name="id" value="" /> </td> <!--id를 위한 로그인창 --> 
+	</tr>	
+	
+	<tr>
+	<td> <label for="pw"> PW</label> </td>
+		<td> <input type="password" id="pw" name="password" value="" /> </td> <!--id를 위한 로그인창 --> 
+	</tr>	
+	<tr>
+	<td clospan="2" > <label for="remember"> ID/PW기억</label> </td>
+		<td> <input type="checkbox" id="remember" name="remember" value="" /> </td> <!--id를 위한 로그인창 --> 
+	</tr>	
+		
+	<tr>
+		<td colspan="2"> 
+		<input type="submit" value="로그인">
+		<input type="button" value="ID/PW찾기">
+	 <a href="users2.html">회원 가입</a> 
+		 </td>
+		 
+		<td> </td>
+	</tr>	
+		
+	</table>
+
+</form>
+</body>
+</html>
