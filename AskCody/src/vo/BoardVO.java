@@ -6,14 +6,14 @@ public class BoardVO {
 	int post_id;
 	String user_id;
 	String title;
-	boolean has_picture;
+	String has_picture;
 	String content;
 	Date post_date;
 	int count;
 	
 	public BoardVO() {}
 
-	public BoardVO(int post_id, String user_id, String title, boolean has_picture, String content, Date post_date,
+	public BoardVO(int post_id, String user_id, String title, String has_picture, String content, Date post_date,
 			int count) {
 		this.post_id = post_id;
 		this.user_id = user_id;
@@ -22,6 +22,7 @@ public class BoardVO {
 		this.content = content;
 		this.post_date = post_date;
 		this.count = count;
+		
 	}
 
 	public int getPost_id() {
@@ -48,11 +49,11 @@ public class BoardVO {
 		this.title = title;
 	}
 
-	public boolean isHas_picture() {
+	public String getHas_picture() {
 		return has_picture;
 	}
 
-	public void setHas_picture(boolean has_picture) {
+	public void setHas_picture(String has_picture) {
 		this.has_picture = has_picture;
 	}
 
@@ -79,7 +80,8 @@ public class BoardVO {
 	public void setCount(int count) {
 		this.count = count;
 	}
-
+	
+	
 	@Override
 	public String toString() {
 		return "BoardVO [post_id=" + post_id + ", user_id=" + user_id + ", title=" + title + ", has_picture="
@@ -92,7 +94,7 @@ public class BoardVO {
 		int result = 1;
 		result = prime * result + ((content == null) ? 0 : content.hashCode());
 		result = prime * result + count;
-		result = prime * result + (has_picture ? 1231 : 1237);
+		result = prime * result + ((has_picture == null) ? 0 : has_picture.hashCode());
 		result = prime * result + ((post_date == null) ? 0 : post_date.hashCode());
 		result = prime * result + post_id;
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
@@ -116,7 +118,10 @@ public class BoardVO {
 			return false;
 		if (count != other.count)
 			return false;
-		if (has_picture != other.has_picture)
+		if (has_picture == null) {
+			if (other.has_picture != null)
+				return false;
+		} else if (!has_picture.equals(other.has_picture))
 			return false;
 		if (post_date == null) {
 			if (other.post_date != null)
@@ -137,6 +142,7 @@ public class BoardVO {
 			return false;
 		return true;
 	}
+
 	
 	
 	

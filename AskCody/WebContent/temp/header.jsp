@@ -37,7 +37,7 @@
 			<ul>
 				<li><a href="#"> Notice </a></li>
 				<li><a href="event.jsp"> Event </a></li>
-				<li><a href="freeboard.jsp"> FreeBoard </a></li>
+				<li><a href="listBoard.do"> FreeBoard </a></li>
 			</ul>
 		</li>
 		<li><a href="#" class="menu"> ASKCODY </a>
