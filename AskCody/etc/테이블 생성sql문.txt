@@ -51,6 +51,13 @@ create table coordi_cloth (
     image varchar2(40) NOT NULL 
 );
 
+--코디추천옷 테이블
+create table cloth_suggestion (
+    cloth_id number(6) constraint sugg_pk PRIMARY KEY, 
+    save_date date NOT NULL,
+    image varchar2(20) NOT NULL
+);
+
 --자유 게시판
 create table board (
    post_id number(6) constraint board_pk PRIMARY KEY, 
@@ -61,6 +68,7 @@ create table board (
    post_date date not null,
    count number(10) default 0 
 );
+--자유게시판 변경점(has_picture 제거)
 
 --게시판 이미지
 create table board_img (
