@@ -24,20 +24,20 @@
 	<table>
 	<tbody>
 	<tr><td>
-	<span id="title" >안녕하세요</span> 
+	<span id="title" >${title}</span> 
 	</td>
 	<td class="bordertd">|</td>
 	<td>
-	<a id="golist" href="freeboard.jsp">목록으로</a>
-	<a id="modify" href="modify.do">수정</a>
-	<a id="delete" href="delete.do">삭제</a>
+	<a id="golist" href="listBoard.do">목록으로</a>
+	<a id="modify" href="go_board_modify.do?post_id=${postid}">수정</a>
+	<a id="delete" href="board_delete.do?post_id=${postid}">삭제</a>
 	</td>
 	</tr>
 	</tbody>
 	</table>
 	</div>
 	<hr>
-	<p>hello world</p>
+	<p>${content}</p>
 </div>
 
 <!-- 여기까지 본문내용 -->

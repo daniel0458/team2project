@@ -12,7 +12,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 </script>
 
-
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,9 @@
 #search {
 	margin: auto;
 }
-
+#move {
+	text-align: center;
+}
 </style>
 
 <script type="text/javascript">
@@ -33,8 +35,8 @@ $(function() {
 	/*  */
 	$('.list').click(function() {
 		let postid = $(this).find('#post_id').text();
-		//alert(postid);
-		location.href='post.jsp';
+		
+		location.href='post.do?post_id='+postid;
 	})
 })
 
@@ -54,30 +56,44 @@ $(function() {
 					<th>번호</th>
 					<th>작성자</th>
 					<th>제목</th>
-					<th>사진여부</th>
+					<!-- <th>사진여부</th> -->
 					<th>작성일</th>
 					<th>조회수</th>
 				</tr>
 			</thead>
 			<tbody>
+				<c:forEach var="data" items="${boardlist}">
 				<tr class="list">
-					<td id="post_id">2</td>
-					<td>홍길동</td>
-					<td>안녕</td>
-					<td>o</td>
-					<td>19.09.11</td>
-					<td>1</td>
+					<td id="post_id">${data.post_id}</td>
+					<td>${data.user_id}</td>
+					<td>${data.title}</td>
+					<!-- <td>${data.has_picture}</td>  -->
+					<td>${data.post_date}</td>
+					<td>${data.count}</td>
 				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
+		<p id=move>
+		<a class="move_board" href="moveboard.do?keyword=${keyword}&condition=${condition}&board_num=1"><<&nbsp</a>
+		<c:set var="list_num" value="${list_num}"/>
+		<%
+		int list_num = (int)pageContext.getAttribute("list_num");
+			
+		for(int i=1; i <= list_num;i++) { %>
+			<a class="move_board" href="moveboard.do?keyword=${keyword}&condition=${condition}&board_num=<%=i%>"><%=i%></a>
+		<%}%>
+		<a class="move_board" href="moveboard.do?keyword=${keyword}&condition=${condition}&board_num=${list_num}">&nbsp>></a>
+		</p>
+		<br>		
 		<a id="write_btn" class="btn btn-default pull-right" href="boardwriter.jsp"> 글쓰기 </a>
-		<form action="${pageContext.request.contextPath}/search.do" method="post">
+		<form action="${pageContext.request.contextPath}/board_search.do" method="post">
     <table id=search>
         <tr>
            <td>
               <select name="condition">
-                  <option value="bookname">도서제목</option>
-                  <option value="publisher">출판사</option>
+                  <option value="title">제목</option>
+                  <option value="user_name">작성자</option>
               </select>
               <input type="text" name="keyword">
               <input type="submit" value="검색">
@@ -86,10 +102,6 @@ $(function() {
     </table>
 </form>
 	</div>
-<!-- 게시판 링크 수정은 askcody_header에서! -->
-<!-- 여기에 본문 내용을 넣어주세요 -->
-
-
 <!-- 여기까지 본문내용 -->
 </section>
 </div>
