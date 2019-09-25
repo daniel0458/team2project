@@ -20,11 +20,18 @@ import service.UsersService;
 import service.UsersServiceImpl;
 import vo.UsersVO;
 
-@WebServlet("/login.do")
+@WebServlet({"/login.do","/logout.do"})
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 HttpSession session = request.getSession();
+		 if(session != null) {
+			 session.invalidate();
+		 }
+		 response.sendRedirect("./index.jsp");
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html;charset=utf-8");
@@ -47,6 +54,7 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("user_name", user.getUser_name());
 					session.setAttribute("role", user.getRole());
 					request.getRequestDispatcher("index.jsp").forward(request, response);
+					return;
 				} else {
 					request.setAttribute("msg", "비밀번호가 틀렸습니다.");
 					request.getRequestDispatcher("login.jsp").forward(request, response);

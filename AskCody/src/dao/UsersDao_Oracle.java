@@ -192,30 +192,4 @@ public class UsersDao_Oracle extends UsersDao {
 		return JSONObject.toJSONString(map);
 		
 	 }
-	public  String pwcheck(String password) {
-		String sql = "select * from users where password= ? ";
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		
-		Map<String, String> map = new HashMap<String, String>();
-		try {
-				con = JDBCUtil.getConnection();
-				ps = con.prepareStatement(sql);
-				ps.setString (1, password);
-				
-				rs = ps.executeQuery();
-				
-				while(rs.next()) {
-					map.put("password", (rs.getString("password")));
-				}
-		} catch (Exception e) {
-		} finally {
-			JDBCUtil.close(con, ps, rs);
-		}
-		
-		return JSONObject.toJSONString(map);
-		
-	 }
-
 }

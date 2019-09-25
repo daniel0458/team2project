@@ -40,8 +40,5 @@ public class UsersDao { // data access object DB연동 코드를 가지고 있�
 	public String idcheck(String id) {
 		return null;
 	}
-	public String pwcheck(String password) {
-		return null;
-	}
-	
+
 }

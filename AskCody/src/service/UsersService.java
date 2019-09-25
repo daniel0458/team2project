@@ -13,7 +13,7 @@ public interface UsersService {
 	int updateusers(UsersVO vo);
 	int insertuser(UsersVO vo) throws Exception;
 	String idcheck(String id);
-	String pwcheck(String password);
+
 	
 	
 }

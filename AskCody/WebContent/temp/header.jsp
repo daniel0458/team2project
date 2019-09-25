@@ -6,6 +6,7 @@
 
 <div id="users">
 	<span><a href="login.jsp" class="reg"> LOGIN </a></span> 
+	<span><a href="logout.do" class="reg"> LOGOUT </a></span> 
 	<span><a href="signup.jsp" class="reg"> SIGN UP </a></span>
 </div>
 <br/>

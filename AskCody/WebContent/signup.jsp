@@ -46,7 +46,6 @@
 			},
 			success : function(data) {
 				if (data.id == undefined) {
-					alert(data.id)
 					$('#msg1').html('사용가능한아이디입니다.')
 				} else {
 					$('#msg1').html('사용중인아이디입니다.')
@@ -56,34 +55,27 @@
 				alert("error " + e);
 			}
 		});
-	
-	$(function () {
-		$('#pw_check').click(function () {
-			pwcheck();
+	}
+
+
+	$(function() {
+		$('#pw').keyup(function(){
+			$('#checkNotice').html('');
+		});
+		
+		$('#pw_check').keyup(function(){
+			
+			if($('#pw').val() != $('#pw_check').val()) {
+				$('#checkNotice').html('비밀번호 일치하지 않음');
+				$('#checkNotice').attr('color', 'red');
+			} else {
+				$('#checkNotice').html('비밀번호 일치함');
+				$('#checkNotice').attr('color', 'blue');
+			}
 		});
 	});
-
-	function pwcheck() {
-	$.ajax({
-			url : 'json/id_check.jsp',
-			dataType : 'json',
-			data : {
-				id : $('#id').val()
-			},
-			success : function(data) {
-				if (data.id == undefined) {
-					alert(data.id)
-					$('#msg1').html('사용가능한아이디입니다.')
-				} else {
-					$('#msg1').html('사용중인아이디입니다.')
-				}
-			},
-			error : function() { 
-				alert("error " + e);
-			}
-		});
 	
-	}
+	
 </script>
 
 </head>
@@ -104,26 +96,29 @@
 
 			<td><label for="id"> ID</label></td>
 
-			<td><input type="text" id="id" name="id" value="" /> <input
-				type="button" value="ID중복체크" id="id_check"> <br> <span
-				id="msg1" class="error"></span></td>
+			<td><input type="text" id="id" name="id" value="" /> 
+			<input type="button" value="ID중복체크" id="id_check"> <br> 
+			<span id="msg1" class="error"></span></td>
 
 			</tr>
 
 			<tr>
 
 				<td><label for="password"> password</label></td>
-
-				<td><input type="password" id="pw" name="password" value="" />
-					<input type="button" value="PW확인" id="pw_check"> <br> <span
-				id="msg1" class="error"></span></td>
-
+				<td><input type="password" id="pw" name="password" value="" required="required" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{5,}"/></td> <br> 
+				
+			</tr>
+			
+			<tr>	
+			
+				<td><label for="password"> password_check</label></td>
+				<td> <input type="password"  id="pw_check" value=""/> <br> <span
+				id="msg5" class="error"></span> <font id="checkNotice" size="2"></font>
+				</td>
+				
 			</tr>
 				
 
-				<!-- name은 로그인창에 변수같은것 이다. id는 users 객채 와 이름을 같게한다. -->
-
-				<!-- value는 그창에 입력된 값 -->
 
 			</tr>
 

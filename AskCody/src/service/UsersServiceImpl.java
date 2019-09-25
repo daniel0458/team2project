@@ -57,10 +57,7 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 
-	@Override
-	public String pwcheck(String password) {
-		return dao.pwcheck(password);
-	}
+
 
 
 }

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/askcody_cssTemplate.css">
+<link rel="stylesheet" href="./css/login.css">
 <title> Welcome AskCody </title>
 </head>
 
@@ -35,15 +36,14 @@
 	<tr>
 		
 		<td colspan="2"> 
-		<input type="submit" value="로그인">
-		<input type="reset" value="취소">
+		<input type="submit"  id="lo" value="로그인">
+		<input type="reset" id = "de" value="취소">
 		
 	 <a href="signup.jsp">회원 가입</a> 
 	 <span style="color: red;">${msg}</span>
 	 
 		 </td>
-		 
-		<td> </td>
+		
 	</tr>	
 		
 	</table>
