@@ -16,14 +16,21 @@
   #main{
   	margin-left: 100px;
   }
+  a{
+  	text-decoration: none;
+  }
   
   </style>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  
+  const log  = console.log;
+  let img;
+ 
   $( function() {
+	  
+	  
     $( "#droppable-container .draggable" ).draggable({ revert: "invalid", connectToSortable: "#droppable1", helper: "clone"});
  
     $( "#droppable1, #droppable-container" ).sortable({
@@ -43,7 +50,37 @@
             .html( "코디북 만들기  시작!!!" );
       }
     });
-  } );
+    
+  	
+    $('#reset').click(function(){
+		 $('#droppable1 .draggable').remove(); 
+	  });
+    
+	$('#btn1').click(function () {
+		  //var a = $('#droppable-container img').length;
+		  var b = $('#droppable1 img').length;
+		  let list =new Array;
+		  	for (var i = 0; i < b; i++) {
+				list.push($('#droppable1 img').eq(i).attr("src"));
+		  	}; 
+		  	alert(list);
+			$.ajax({
+				url:'savecoordi.do',
+				type:'POST',
+				data: {list_num: b , list:list},
+				dataType: 'json',
+				success:function(data){
+					alert('success');
+					//$('#msg').html('success')
+				},
+				error:function(error){
+					alert('error');
+					$('#msg').html('error '+error)
+				}
+			});
+		});
+  });
+  
   </script>
 
 
@@ -54,7 +91,6 @@
 <%@include file="../temp/header.jsp" %>
 
 
-
 <div id="main">
 <section>
 <!-- 여기에서부터 본문내용 시작 -->
@@ -62,30 +98,24 @@
 
 <!-- 게시판 링크 수정은 askcody_header에서! -->
 <!-- 여기에 본문 내용을 넣어주세요 -->
-<form action="save.do" method="post">
-<div id="droppable1" class="ui-widget-header">
+<form method="post">
+<div style="overflow:scroll" id="droppable1" class="ui-widget-header">
   <p>여기에 옷을 놓아주세요</p>
 </div>
 
-<div id="droppable-container" class="ui-widget-header">
+<div style="overflow:scroll" id="droppable-container" class="ui-widget-header">
+	
+<c:forEach var="data" items="${suggestion}">
 	<div class="draggable ui-widget-content">
-	<input type="hidden" value="./img/반바지1.jpg" name="coordi_id[]" >
-	  <img class="img" src="./img/반바지1.jpg">
+	<input type="hidden" value="${data.image}" name="coordi_id" >
+	  <img class="img" src="${data.image}">
 	</div>
-	<div class="draggable ui-widget-content">
-	<input type="hidden" value="./img/반바지2.jpg" name="coordi_id[]" >
-	  <img class="img" src="./img/반바지2.jpg">
-	</div>
-	<div class="draggable ui-widget-content">
-	<input type="hidden" value="./img/반바지3.jpg" name="coordi_id[]" >
-	  <img class="img" src="./img/반바지3.jpg">
-	</div>
+</c:forEach>
 </div>
-<input type="submit" value="저장">
-<input type="reset" value="임시버튼">
+<button id="btn1">저장</button>
+<input id="reset" type="reset" value="처음부터">
 
-<p><a href="./listcoordi.do">코디목록</a></p>
-<p><a href="./save.do">코디저장</a>
+<p><a href="listcoordibook.do">옷 저장 목록</a></p>
 
 <!-- 여기까지 본문내용 -->
 </form>

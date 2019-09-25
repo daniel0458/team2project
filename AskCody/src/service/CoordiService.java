@@ -2,12 +2,11 @@ package service;
 
 import java.util.List;
 
-import vo.CD_ClothVO;
+import vo.CoordiVO;
 
 public interface CoordiService {
 	
-	List <CD_ClothVO> loadCoordi();
-	int addCoordi(CD_ClothVO vo);
-	int deleteCoordi(int coordi_id);
+	List<CoordiVO> loadCoordi(String user_id);
+	int addCoordi(CoordiVO vo);
 	
 }

@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.CoordiDAO;
 import service.CoordiService;
-import service.CoordiServiceImp;
-import vo.CD_ClothVO;
+import service.CoordiServiceImpl;
+import vo.CoordiVO;
 
-@WebServlet("/listcoordi.do")
+@WebServlet("/listcoordibook.do")
 public class ListCoordiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,18 +22,22 @@ public class ListCoordiServlet extends HttpServlet {
 		response.setContentType("text/html;charset = utf-8");
 		request.setCharacterEncoding("utf-8");
 		
-		System.out.println("/listcoordi.do 요청 처리 ");
+		System.out.println("/listcoordibook.do 요청 처리 ");
+		
+		
 		
 		CoordiDAO dao = new CoordiDAO();
-		CoordiService service = new CoordiServiceImp(dao);
-		List <CD_ClothVO> list = service.loadCoordi();
+		CoordiService service = new CoordiServiceImpl(dao);
 		
-		//System.out.println(list);
+		String id = "5";
+		//String id=
+		List<CoordiVO> list = service.loadCoordi(id);
+		System.out.println("list ==> " + list);
+		request.setAttribute("loadcoordibook", list);
+		String view = "/selectcoordi.jsp";
 		
-		request.setAttribute("loadcoordi", list);
-		String view = "/Coordi_load.jsp";
-			
+		
 		getServletContext().getRequestDispatcher(view).forward(request, response);
-			
-		}
 	}
+
+}
