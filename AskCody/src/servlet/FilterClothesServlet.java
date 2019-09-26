@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -23,8 +24,6 @@ public class FilterClothesServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
 		
-		System.out.println("/filterClothes.do ¿äÃ» Ã³¸®");
-		
 		String cloth_type = request.getParameter("cloth_type");
 		String cloth_color = request.getParameter("cloth_color");
 		System.out.println(cloth_type+" : "+cloth_color);
@@ -37,29 +36,29 @@ public class FilterClothesServlet extends HttpServlet {
 			
 			if (cloth_type==null || cloth_color==null) {
 
+				PrintWriter out = response.getWriter();
+				out.println("<script> alert('please'); location.href='./finder.jsp'; </script>");
+				out.println("<script> </script>");
+				out.flush();
+				return;
 				
-			
 			} else if (cloth_type.equals("alltype") && !cloth_color.equals("allcolor")) {
 				list = service.filteralltypeclothes(cloth_color);
-				System.out.println("±î²á1_¼öÁ¤2");
 
 			} else if (cloth_color.equals("allcolor") && !cloth_type.equals("alltype")){
 				list = service.filterallcolorclothes(cloth_type);
-				System.out.println("±î²á2_¼öÁ¤1");
 
 			} else if (cloth_type.equals("alltype") && cloth_color.equals("allcolor")) {			
 				list = service.allclothesList();		
-				System.out.println("±î²á3_¼öÁ¤3");
 
 			} else {
 				list = service.filterclothes(cloth_type, cloth_color);				
-				System.out.println("±î²á4");
 			}
 			
 			System.out.println("listClothes"+list);
 			System.out.println();
 			request.setAttribute("filteredlist", list);
-			String view = "/helpme.jsp";
+			String view = "/finder.jsp";
 			
 			getServletContext().getRequestDispatcher(view).forward(request, response);
 			
