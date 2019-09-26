@@ -1,0 +1,32 @@
+<temp>
+[temp/header.jsp]
+
+1. 메뉴변경
+- OOTD의 submenu2, 3 삭제
+- SELECT -> CUSTOM 으로 변경
+- Find Cody -> Finder로 변경 (cody, coordi spelling 충돌)
+- CUSTOM의 submenu 삭제
+- BOARD의 Notice, Event 삭제
+
+
+<CSS>
+[askcody_index.css]
+
+(이 파일 기준으로 다른 파일 CSS도 이와 같이 변경.
+바꾼건 메뉴 li 및 메뉴 li a 색상, footer 색상 변경
+
+1. Theme CSS 변경
+- line49th -
+#dropdown ul li{ 
+	color: rgb(035, 058, 79); 
+}
+
+- line68th -
+#dropdown ul li a {
+	color: rgb(055, 078, 99);
+}
+
+- line138th -
+.footer{
+	background: rgb(035, 058, 79);
+}
