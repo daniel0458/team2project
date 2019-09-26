@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.FreeBoardDao;
@@ -31,6 +32,15 @@ public class WriteBoardServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8"); 
         
         System.out.println("/write.do 처리\n");
+        
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+        System.out.println(id);
+        if(id ==  null) {
+        	System.out.println(id);
+        	getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+            return;
+        }
         
         FreeBoardDao dao = new FreeBoardDao();
         FreeBoardService service= new FreeBoardServiceImpl(dao);

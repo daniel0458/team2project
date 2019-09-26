@@ -25,11 +25,6 @@ public class ListBoardServlet extends HttpServlet {
         
         System.out.println("/listBoard.do 처리");
         
-        HttpSession session = request.getSession();
-        String login = (String) session.getAttribute("login");
-        if(login ==  null) {
-        	request.setAttribute("hidden", "hidden");
-        }
         FreeBoardDao dao = new FreeBoardDao();
         FreeBoardService service= new FreeBoardServiceImpl(dao);
         
