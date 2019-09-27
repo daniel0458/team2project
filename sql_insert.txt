@@ -1,0 +1,136 @@
+table 구조 수정
+
+image column 사이즈 늘리기
+VARCHAR2(30)으로 늘림
+
+안 쓰는 column에 null 추가하기
+cloth_name, save_date에 null 허용
+
+sequence 생성
+
+create sequence seq_askcody
+start with 1
+increment by 1;
+
+
+sql data insert
+1. image 칼럼을 같은 파일로 작성.
+2. 뚝빼기/상의/하의에 따라 색 정보를 달리 넣는다.
+3. cmd에 바로 꽂아버리기.
+
+--뚝빼기--
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_009.jpg');
+
+--상의--
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_009.jpg');
+
+--하의--
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'white', './codyimgs/askcody_009.jpg');
+
+
+
+--적어드립니당--
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_001.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_001.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_001.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_002.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_002.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_002.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_003.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_003.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_003.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_004.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_004.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_004.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_005.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'white', './codyimgs/askcody_005.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_005.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_006.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_006.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_006.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'navy', './codyimgs/askcody_007.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'white', './codyimgs/askcody_007.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'navy', './codyimgs/askcody_007.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'navy', './codyimgs/askcody_008.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'white', './codyimgs/askcody_008.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'black', './codyimgs/askcody_008.jpg');
+
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'cap', 'black', './codyimgs/askcody_009.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'top', 'black', './codyimgs/askcody_009.jpg');
+
+insert into clothes(CLOTH_ID, CLOTH_TYPE, CLOTH_COLOR, IMAGE)
+values(seq_askcody.NEXTVAL, 'bottom', 'white', './codyimgs/askcody_009.jpg');
+
+
+
+
+
+sql data updqte
+
+update clothes
+set image = './codyimgs/black_bottom5.jpg'
+where cloth_id=15;
+
+
