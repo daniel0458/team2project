@@ -1,0 +1,72 @@
+1. 옷
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반바지1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반바지2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반바지3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반바지4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반바지5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반팔1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반팔2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반팔3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반팔4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/반팔5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/가디건1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/가디건2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/가디건3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/가디건4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/가디건5.jpg');
+
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/야상1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/야상2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/야상3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/야상4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/야상5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/자켓1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/자켓2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/자켓3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/자켓4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/자켓5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/점퍼1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/점퍼2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/점퍼3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/점퍼4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/점퍼5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/집업1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/집업2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/집업3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/집업4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/집업5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/코트1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/코트2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/코트3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/코트4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/코트5.jpg');
+
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/패딩1.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/패딩2.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/패딩3.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/패딩4.jpg');
+insert into cloth_suggestion values(cloth_suggestion_seq.NEXTVAL,sysdate,'./img/패딩5.jpg');
+
+
+
+
+
+2. 코디
+create sequence coordi_seq;
+insert into coordi values(coordi_seq.NEXTVAL,'모자','1',sysdate);
+insert into coordi values(coordi_seq.NEXTVAL,'신발','2',sysdate);
+insert into coordi values(coordi_seq.NEXTVAL,'모자','3',sysdate);
+insert into coordi values(coordi_seq.NEXTVAL,'모자','4',sysdate);
+
+3. 코디북
+insert into coordi_cloth values(coordi_cloth_seq.NEXTVAL,1,'./img/반팔1.jpg');
+insert into coordi_cloth values(coordi_cloth_seq.NEXTVAL,2,'./img/반팔3.jpg');
+insert into coordi_cloth values(coordi_cloth_seq.NEXTVAL,3,'./img/반팔2.jpg');
+insert into coordi_cloth values(coordi_cloth_seq.NEXTVAL,4,'./img/반팔4.jpg');
